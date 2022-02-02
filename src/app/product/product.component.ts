@@ -9,7 +9,7 @@ import { ActivatedRoute,Router } from '@angular/router';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  isShow = false;
+  isShow = true;
   
   products: any = [];
   items: any;

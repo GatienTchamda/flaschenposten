@@ -9,7 +9,8 @@ import { ActivatedRoute,Router } from '@angular/router';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-
+  isShow = false;
+  
   products: any = [];
   items: any;
   
@@ -85,7 +86,8 @@ export class ProductComponent implements OnInit {
       return 0;
     });
   }
-  ViewData(){
-
+  
+  toggleDisplay() {
+    this.isShow = !this.isShow;
   }
 }

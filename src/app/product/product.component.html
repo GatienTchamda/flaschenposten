@@ -1,12 +1,13 @@
 <br>
 <div class="button-row">
   <button mat-raised-button (click)="sortData()" matTooltip="Sortiert Asc und Desc">Sort</button>
-  <button mat-raised-button disabled>View</button>
-    <button mat-mini-fab color="warn" (click)="filterData()" matTooltip="Filter produkt größer als 2" aria-label="Example icon button with a filter list icon">
+  <button mat-raised-button  (click) = "toggleDisplay()"  matTooltip="Wechsel view von Produkte">View</button>
+    <button mat-mini-fab color="warn" (click)="filterData()" matTooltip="Filter produkt größer als 2€" aria-label="Example icon button with a filter list icon">
       <mat-icon>filter_list</mat-icon>
     </button>
 </div>
 <br>
+<ng-container *ngIf="isShow">
 <mat-card class="example-card" *ngFor="let p of products;">
   <div id="results">
     <mat-icon aria-hidden="false" aria-label="bottle icon">local_drink</mat-icon>
@@ -20,3 +21,11 @@
       </div>
     </div>  
 </mat-card>
+</ng-container>
+<ng-container *ngIf="!isShow">
+  <mat-card class="example-card" *ngFor="let p of products;">
+    <div id="results">
+      <mat-icon aria-hidden="false"  matTooltip={{p.brandName}} aria-label="bottle icon">local_drink</mat-icon>      
+    </div>  
+  </mat-card>
+</ng-container>
